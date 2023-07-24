@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<script src="code.jquery.com_jquery-3.7.0.min.js"></script>
+	<script type="text/javascript">
+		var cnt = 1;
+		var move = 30;
+		
+		$( ()=>{
+			$("button.move").click(()=>{
+				if(cnt == 10)
+				cnt = 1;
+				
+				$("img").animate({
+					left : "" + move + "px"
+					
+				});
+				
+				$("#img").attr(
+					"src","./images/p" + cnt + ".png"
+					
+					);
+				move+=30;
+				cnt++;
+				
+				
+				
+			});
+			$("button.init").click(()=>{
+				$("img").animate({
+					left : "0px" 
+				});
+				
+				move = 30;
+			});
+		});
+		function MyTimer() {
+			
+		}
+		
+	</script>
+
+</head>
+<body>
+	<p class ="clock"style="text-align: center;"><b>---준비---</b></p>
+	<hr>
+	<img id ="img" src="./images/p1.png" height="120px" width="100px" style="position: relative;">
+	<hr>
+	<button class="move">달리기</button>
+	<button class="init">초기화</button>
+</body>
+</html>
